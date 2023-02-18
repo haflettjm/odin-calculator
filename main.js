@@ -1,3 +1,6 @@
+const buttons = document.querySelectorAll(".button");
+const output = document.querySelector("#output");
+
 // Make some basic math functions
 
 const add = (x,y) =>{
@@ -22,12 +25,21 @@ const divide = (x,y) =>{
 const operate = (opr, num1, num2) =>{
     switch(opr){
         case '+':
-            add(num1,num2);
+            return add(num1,num2);
         case '-':
-            subtract(num1,num2);
-        case 'x':
-            multiply(num1,num2);
+            return subtract(num1,num2);
+        case '*':
+            return multiply(num1,num2);
         case '/':
-            divide(num1,num2);
+            return divide(num1,num2);
     }
 }
+
+// Add the click event to fire the operate class
+buttons.forEach(button =>{
+    button.addEventListener('click', e =>{
+        let num1 = parseInt(document.getElementById('num1').value);
+        let num2 = parseInt(document.getElementById('num2').value);
+        output.innerHTML = operate(button.id, num1, num2);
+    })
+})
