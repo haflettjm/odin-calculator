@@ -8,39 +8,34 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-
     <div class="calculator">
         <div class="calculatorBody">
-            <div class="screen">
-                <div class="previousEntered">0000 / 0000</div>
-                <div class="currentlyEntered"> 0000000</div>
+            <div class="screenContainer">
+            <div class="screen scanline">
+                <div class="input"></div>
+                <div class="output"></div>
+            </div>
             </div>
             <div class="keypad">
-                <button class="btn">AC</button>
-                <button class="btn">C</button>
-                <button class="btn" id="equals">=</button>
-                
-                
-                <button class="btn">1</button>
-                <button class="btn">2</button>
-                <button class="btn">3</button>
-                <button class="btn">+</button>
-                
-                <button class="btn">4</button>
-                <button class="btn">5</button>
-                <button class="btn">6</button>
-                <button class="btn">-</button>
-                
-                <button class="btn">7</button>
-                <button class="btn">8</button>
-                <button class="btn">9</button>
-                <button class="btn">*</button>
-                
-                <button class="btn">%</button>
-                <button class="btn">0</button>
-                <button class="btn">.</button>
-                <button class="btn">/</button>
-                
+                <button class="btn allclear">AC</button>
+                <button class="btn allclear">C</button>
+                <button class="btn equals">=</button>
+                <button class="btn digits" id="1">1</button>
+                <button class="btn digits" id="2">2</button>
+                <button class="btn digits" id="3">3</button>
+                <button class="btn operators" id="+">+</button>              
+                <button class="btn digits" id="4">4</button>
+                <button class="btn digits" id="5">5</button>
+                <button class="btn digits" id="6">6</button>
+                <button class="btn operators" id="-">-</button>
+                <button class="btn digits" id="7">7</button>
+                <button class="btn digits" id="8">8</button>
+                <button class="btn digits" id="9">9</button>
+                <button class="btn operators" id="*">*</button>
+                <button class="btn operators" id="%">%</button>
+                <button class="btn digits" id="0">0</button>
+                <button class="btn decimal" id=".">.</button>
+                <button class="btn operators" id="/">/</button>        
             </div>
         </div>
     </div>

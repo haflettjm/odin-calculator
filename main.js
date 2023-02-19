@@ -1,6 +1,13 @@
-const buttons = document.querySelectorAll(".button");
-const output = document.querySelector("#output");
+const buttons = document.querySelectorAll(".btn");
+const input = document.querySelector('.input')
+const output = document.querySelector(".output");
 const enter = document.querySelector("#equalsButton");
+
+
+// insert Default value
+input.innerHTML = 0;
+output.innerHTML = 0;
+
 
 // Make some basic math functions
 
@@ -36,11 +43,16 @@ const operate = (opr, num1, num2) =>{
     }
 }
 
+let inputHistory = ['0'];
+let count = 0;
+
+
 // Add the click event to fire the operate class
 buttons.forEach(button =>{
     button.addEventListener('click', e =>{
-        let num1 = parseInt(document.getElementById('num1').value);
-        let num2 = parseInt(document.getElementById('num2').value);
-        output.innerHTML = operate(button.id, num1, num2);
+        if(button.id != 'equals'){
+            count++;
+            console.log(`clicked ${button.id}  ${count} times`)
+        }
     })
 })

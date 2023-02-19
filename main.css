@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display&family=Righteous&display=swap');
+
 body{
-    background-color: #40444c;
-    color: white;
+    background-color: #2b2e33;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -26,20 +27,21 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 1rem;
+    border-radius: .75rem;
+    box-shadow: 8px 8px 12px rgba(0,0,0,0.5);
 }
 
 .screen{
+    height: 100%;
     margin: 1rem;
-    background-color: #43474e;
+    background-color: #5b616a;
     justify-self: center;
     align-items: center;
-    padding: 1.5rem;
+    padding: .75rem;
     margin-bottom: .5rem;
     border-radius: .5rem;
     text-align: right;
-    font-size: large;
-    font-weight: 400;
+    font-family: 'Big Shoulders Stencil Display', cursive;
 }
 
 .keypad{
@@ -54,28 +56,90 @@ body{
     grid-column-gap: .75rem;
     grid-row-gap: .75rem;
 }
+
+.keypad button{
+    cursor: pointer;
+}
+
+
+
 .btn{
+    font-family: 'Righteous', cursive;
     width: auto;
     height: auto;
     padding: 1rem;
     border-radius: 1rem;
     border: none;
     text-align: center;
-    background-color: gray;
+    background-color: #947645;
     font-weight: 600;
     color: rgb(212, 201, 201);
+    box-shadow: 4px 5px 3px 0px rgba(0,0,0,0.5);
+    transition: all .15s ease-in-out;
 }
 
-#equals{
+.output{
+    font-size: 1.75rem;
+    margin: .15rem 0;
+    color: #07ae07;
+}
+
+.input{
+    font-size: 1.35rem;
+    color: #68b868;
+    margin: .15rem 0;
+}
+
+.equals{
     grid-row: 1 / 1;
     grid-column: 3/5;
-    background-color: #947645;
-}
-#equals:active{
-    background-color: green;
 }
 
-.btn:active{
-    background-color: #947645;
-    color: white;
+.clear, 
+.equals, 
+.allclear,
+.operators,
+.decimal{
+    background-color: gray;
+}
+ 
+.equals, 
+.operators,
+.decimal{
+    font-size: large;
+}
+
+
+button.equals:hover {
+	background: limegreen;
+	color: var(--white);
+	transform: translateY(-0.2rem);
+}
+
+button.digits:hover,
+button.decimal:hover {
+	background: #bdbdbd;
+	color: #212121;
+	transform: translateY(-0.2rem);
+}
+
+button.operators:hover {
+	background: #016001;
+	transform: translateY(-0.2rem);
+}
+
+button.allclear:hover,
+button.clear:hover {
+	background: lightcoral;
+	color: #000;
+	transform: translateY(-0.2rem);
+}
+
+button.digits:active,
+button.operators:active,
+button.decimal:active,
+button.allclear:active,
+button.clear:active,
+button.equals:active {
+    transform: translateY(0rem);
 }
