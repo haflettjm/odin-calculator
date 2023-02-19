@@ -1,5 +1,6 @@
 const buttons = document.querySelectorAll(".button");
 const output = document.querySelector("#output");
+const enter = document.querySelector("#equalsButton");
 
 // Make some basic math functions
 
