@@ -45,6 +45,8 @@ const operate = (opr, num1, num2) =>{
     }
 }
 
+
+//Declaring Operators here for multi-use
 const operators = ['/', '*', '%', '+', '-'];
 
 
@@ -114,11 +116,13 @@ buttons.forEach(button =>{
 
             console.log(oprArray)
             //initialize the sum
-            if(inputString.includes(operators)){
+            if(operators.some(opr => inputString.includes(opr))){
                 sum = doMath(oprArray);
             }else{
                 sum = inputString;
             }
+
+            console.log(sum)
             // for each element in the array do the math in the correct order
             if(isNaN(sum)){
                 output.innerHTML = "ERR"
@@ -129,6 +133,7 @@ buttons.forEach(button =>{
         }else if(button.classList.contains("allclear")){
             input.innerHTML = 0;
             output.innerHTML = 0;
+            inputString = "";
         }else if(button.classList.contains("clear")){
             newString = input.innerHTML
             if(newString.length > 1){
