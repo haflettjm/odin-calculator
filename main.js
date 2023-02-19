@@ -43,16 +43,33 @@ const operate = (opr, num1, num2) =>{
     }
 }
 
-let inputHistory = ['0'];
+let inputHistory = [];
 let count = 0;
 
+function isNumeric(value) {
+    return /^-?\d+$/.test(value);
+}
 
 // Add the click event to fire the operate class
 buttons.forEach(button =>{
     button.addEventListener('click', e =>{
         if(button.id != 'equals'){
+            let inputString = ""
             count++;
-            console.log(`clicked ${button.id}  ${count} times`)
+            if(button.classList.contains("digits")||button.classList.contains("operators")){
+                inputHistory.push(button.id)
+            }
+
+            inputHistory.forEach(el =>{
+                if(isNumeric(el)){
+                    inputString = inputString + el
+                }else{
+                    inputString = inputString + "  " +el
+                }
+            })
+
+            input.innerHTML = inputString
+
         }
     })
 })
