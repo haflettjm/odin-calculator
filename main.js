@@ -89,31 +89,42 @@ buttons.forEach(button =>{
     button.addEventListener('click', e =>{
 
         if(button.classList.contains("digits") || button.classList.contains("operators")){
-            if(button.classList.contains("operators")){
-                if(digitClicked){
-                    inputString += " " + button.id + " ";
-                    digitClicked = false;
+            if(inputString.length < 21){
+                if(button.classList.contains("operators")){
+                    if(digitClicked){
+                        inputString += " " + button.id + " ";
+                        digitClicked = false;
+                    }
+                }else{
+                    inputString += button.id
+                    digitClicked = true;
                 }
-            }else{
-                inputString += button.id
-                digitClicked = true;
-            }
-            if(inputString != ""){
-                input.innerHTML = inputString
+                if(inputString != ""){
+                    input.innerHTML = inputString
+                }
             }
             return inputString
         }
         // fire the entire equation
         else if(button.classList.contains("equals")){
+            let sum
             // load equation to string then convert to array
             inputString = input.innerHTML
             let oprArray = inputString.split(' ');
 
             console.log(oprArray)
             //initialize the sum
-            let sum = doMath(oprArray);
+            if(inputString.includes(operators)){
+                sum = doMath(oprArray);
+            }else{
+                sum = inputString;
+            }
             // for each element in the array do the math in the correct order
-            output.innerHTML = sum;
+            if(isNaN(sum)){
+                output.innerHTML = "ERR"
+            }else{
+                output.innerHTML = sum
+            }
             oprArray =[];
         }else if(button.classList.contains("allclear")){
             input.innerHTML = 0;

@@ -95,6 +95,11 @@ body{
     grid-column: 3/5;
 }
 
+.zero{
+    grid-row:5/5;
+    grid-column: 2/4;
+}
+
 .clear, 
 .equals, 
 .allclear,
@@ -143,3 +148,26 @@ button.clear:active,
 button.equals:active {
     transform: translateY(0rem);
 }
+
+footer{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
+
+.icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-image: url(/img/github-gray.svg);
+    filter: invert(100%) sepia(0%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  }
+.icon:hover,.icon:focus {
+    cursor: pointer;
+    filter: invert(0%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
